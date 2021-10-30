@@ -1,0 +1,2 @@
+# my-mediawiki-image
+blog
