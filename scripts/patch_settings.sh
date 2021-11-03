@@ -1,4 +1,7 @@
 cat <<EOT >> LocalSettings.php
+
+$wgCirrusSearchServers = [ 'elasticsearch-service' ];
+
 $wgArticlePath = "/$1";
 
 enableSemantics(str_replace("http://", "", $wgServer));

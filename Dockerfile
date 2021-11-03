@@ -9,9 +9,24 @@ RUN cd /var/www/html && \
     php composer.phar install
 
 RUN cd /var/www/html/extensions && \
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Arrays.git Arrays && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git Echo && \
-    git clone https://github.com/nbdd0121/MW-FlowThread.git FlowThread && \
-    cd FlowThread && \
-    git checkout v1.3.2
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git Elastica && \
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git CirrusSearch && \
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/LabeledSectionTransclusion.git LabeledSectionTransclusion && \
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/RegexFun.git RegexFun && \
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/ReplaceSet.git ReplaceSet && \
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Widgets.git Widgets && \
+    git clone https://github.com/nbdd0121/MW-FlowThread.git FlowThread
+
+RUN cd /var/www/html/extensions/FlowThread && \
+    git checkout v1.3.2 && \
+    cd /var/www/html/extensions/Widgets && \
+    php /var/www/html/composer.phar update --no-dev && \
+    cd /var/www/html/extensions/Elastica && \
+    git checkout -f 3e3b76f3b7208167342fee843c401f2587dacde3 && \
+    php /var/www/html/composer.phar update --no-dev && \
+    cd /var/www/html/extensions/CirrusSearch && \
+    git checkout -f 9e203ac720bf99a20d0ff03f31f289dfc61f2e16
 
 COPY ./copy/.htaccess /var/www/html/.htaccess
