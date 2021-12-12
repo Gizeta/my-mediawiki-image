@@ -14,6 +14,7 @@ RUN cd /var/www/html/extensions && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git Elastica && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git CirrusSearch && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/LabeledSectionTransclusion.git LabeledSectionTransclusion && \
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/LoopFunctions.git LoopFunctions && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/RegexFun.git RegexFun && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/ReplaceSet.git ReplaceSet && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Widgets.git Widgets && \
