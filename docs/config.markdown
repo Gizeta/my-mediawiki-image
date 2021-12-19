@@ -8,6 +8,7 @@ $wgCapitalLinks = false;
 $wgLocaltimezone = 'Asia/Shanghai';
 
 $wgAPIModules['parse'] = 'ApiDisabled';
+$wgGroupPermissions['sysop']['interwiki'] = true;
 $wgGroupPermissions['*']['read'] = false;
 $wgWhitelistReadRegexp = [
   '/^(?!(Private):)/'
