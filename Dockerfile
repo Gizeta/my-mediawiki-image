@@ -30,4 +30,9 @@ RUN cd /var/www/html/extensions/FlowThread && \
     cd /var/www/html/extensions/CirrusSearch && \
     git checkout -f 9e203ac720bf99a20d0ff03f31f289dfc61f2e16
 
+RUN chmod 777 /var/www/html/extensions/Widgets/compiled_templates && \
+    mkdir /var/www/html/external && \
+    mkdir /var/www/html/external/mediaelement && \
+    wget -O /var/www/html/external/mediaelement/mejs-controls.svg https://cdnjs.cloudflare.com/ajax/libs/mediaelement/5.0.4/mejs-controls.svg
+
 COPY ./copy/.htaccess /var/www/html/.htaccess
