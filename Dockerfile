@@ -1,6 +1,7 @@
 FROM mediawiki:1.35.4
 
 COPY ./copy/composer.local.json /var/www/html/composer.local.json
+COPY ./copy/extensions/. /var/www/html/extensions/
 
 RUN cd /var/www/html && \
     apt update && \

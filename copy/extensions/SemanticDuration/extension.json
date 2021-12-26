@@ -1,0 +1,27 @@
+{
+  "name": "SemanticDuration",
+  "version": "0.1.0",
+  "author": [
+    "Gizeta"
+  ],
+  "url": "https://github.com/Gizeta/my-mediawiki-image/",
+  "descriptionmsg": "sd-desc",
+  "license-name": "GPL-3.0",
+  "type": "semantic",
+  "requires": {
+    "MediaWiki": ">= 1.35",
+    "extensions": {
+      "SemanticMediaWiki": ">= 3.2"
+    }
+  },
+  "AutoloadClasses": {
+    "SemanticDurationRegistration": "SemanticDurationRegistration.php"
+  },
+  "callback": "SemanticDurationRegistration::onRegistration",
+  "MessagesDirs": {
+    "SemanticDuration": [
+      "i18n"
+    ]
+  },
+  "manifest_version": 2
+}
