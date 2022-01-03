@@ -6,8 +6,8 @@ COPY ./copy/extensions/. /var/www/html/extensions/
 RUN cd /var/www/html && \
     apt update && \
     apt install -y ssh-client wget zip unzip && \
-    wget https://raw.githubusercontent.com/composer/getcomposer.org/ce43e63e47a7fca052628faf1e4b14f9100ae82c/web/installer -O - -q | php -- --quiet && \
-    php composer.phar install
+    wget https://raw.githubusercontent.com/composer/getcomposer.org/baa8937c704cdbf8982a2456f939363b82da0985/web/installer -O - -q | php -- --version=2.1.14 --quiet && \
+    php composer.phar update --no-dev
 
 RUN cd /var/www/html/extensions && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Arrays.git Arrays && \
