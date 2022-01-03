@@ -61,7 +61,7 @@ class DurationValue extends NumberValue {
     $hour = floor( ( $dur - $min * 60 - $sec ) / 3600 );
 
     return ( $hour > 0 ? strval( $hour ) . ':' : '' ) .
-           str_pad( $min, 2, '0', STR_PAD_LEFT ) . ':' .
+           ( $hour > 0 ? str_pad( $min, 2, '0', STR_PAD_LEFT ) : strval( $min ) ) . ':' .
            str_pad( $sec, 2, '0', STR_PAD_LEFT );
   }
 }
