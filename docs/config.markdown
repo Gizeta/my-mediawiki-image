@@ -16,8 +16,14 @@ $wgWhitelistReadRegexp = [
 
 define("NS_PRIVATE", 8000);
 define("NS_PRIVATE_TALK", 8001);
-$wgExtraNamespaces[NS_RAVINGS] = "Private";
-$wgExtraNamespaces[NS_RAVINGS_TALK] = "Private_Talk";
+$wgExtraNamespaces[NS_PRIVATE] = "Private";
+$wgExtraNamespaces[NS_PRIVATE_TALK] = "Private_Talk";
+$smwgNamespacesWithSemanticLinks[NS_PRIVATE] = true;
+
+$wgContentNamespaces = [
+  NS_MAIN,
+  NS_PRIVATE
+];
 
 $wgCirrusSearchServers = [ 'elasticsearch-service' ];
 $wgSearchType = 'CirrusSearch';

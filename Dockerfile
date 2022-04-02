@@ -11,6 +11,7 @@ RUN cd /var/www/html && \
 
 RUN cd /var/www/html/extensions && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Arrays.git Arrays && \
+    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Cargo Cargo && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git Echo && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git Elastica && \
     git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git CirrusSearch && \
