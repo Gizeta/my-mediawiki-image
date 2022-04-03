@@ -2,4 +2,4 @@ Dependencies
 ===
 | Name | Version|
 | - | - |
-| elasticsearch | 6.5.4 |
+| elasticsearch | 6.8.23 |
