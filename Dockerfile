@@ -1,4 +1,4 @@
-FROM mediawiki:1.35.5
+FROM mediawiki:1.37.1
 
 COPY ./copy/composer.local.json /var/www/html/composer.local.json
 COPY ./copy/extensions/. /var/www/html/extensions/
@@ -10,16 +10,16 @@ RUN cd /var/www/html && \
     php composer.phar update --no-dev
 
 RUN cd /var/www/html/extensions && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Arrays.git Arrays && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Cargo Cargo && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git Echo && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git Elastica && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git CirrusSearch && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/LabeledSectionTransclusion.git LabeledSectionTransclusion && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/LoopFunctions.git LoopFunctions && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/RegexFun.git RegexFun && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/ReplaceSet.git ReplaceSet && \
-    git clone --branch REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/Widgets.git Widgets && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Arrays.git Arrays && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Cargo Cargo && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git Echo && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git Elastica && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git CirrusSearch && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/LabeledSectionTransclusion.git LabeledSectionTransclusion && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/LoopFunctions.git LoopFunctions && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/RegexFun.git RegexFun && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/ReplaceSet.git ReplaceSet && \
+    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Widgets.git Widgets && \
     git clone https://github.com/nbdd0121/MW-FlowThread.git FlowThread
 
 RUN cd /var/www/html/extensions/FlowThread && \
@@ -38,3 +38,4 @@ RUN chmod 777 /var/www/html/extensions/Widgets/compiled_templates && \
     wget -O /var/www/html/external/mediaelement/mejs-controls.svg https://cdnjs.cloudflare.com/ajax/libs/mediaelement/5.0.4/mejs-controls.svg
 
 COPY ./copy/.htaccess /var/www/html/.htaccess
+COPY ./copy/skins/. /var/www/html/skins/
