@@ -10,20 +10,18 @@ RUN cd /var/www/html && \
     php composer.phar update --no-dev
 
 RUN cd /var/www/html/extensions && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Arrays.git Arrays && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Cargo Cargo && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git Echo && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git Elastica && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git CirrusSearch && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/LabeledSectionTransclusion.git LabeledSectionTransclusion && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/LoopFunctions.git LoopFunctions && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/ReplaceSet.git ReplaceSet && \
-    git clone --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Widgets.git Widgets && \
-    git clone https://github.com/nbdd0121/MW-FlowThread.git FlowThread
+    git clone --depth 1 --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Arrays.git Arrays && \
+    git clone --depth 1 --branch 3.2 https://gerrit.wikimedia.org/r/mediawiki/extensions/Cargo Cargo && \
+    git clone --depth 1 --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git Echo && \
+    git clone --depth 1 --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git Elastica && \
+    git clone --depth 1 --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git CirrusSearch && \
+    git clone --depth 1 --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/LabeledSectionTransclusion.git LabeledSectionTransclusion && \
+    git clone --depth 1 --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/LoopFunctions.git LoopFunctions && \
+    git clone --depth 1 --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/ReplaceSet.git ReplaceSet && \
+    git clone --depth 1 --branch REL1_37 https://gerrit.wikimedia.org/r/mediawiki/extensions/Widgets.git Widgets && \
+    git clone --depth 1 --branch v1.3.2 https://github.com/nbdd0121/MW-FlowThread.git FlowThread
 
-RUN cd /var/www/html/extensions/FlowThread && \
-    git checkout v1.3.2 && \
-    cd /var/www/html/extensions/Widgets && \
+RUN cd /var/www/html/extensions/Widgets && \
     php /var/www/html/composer.phar update --no-dev && \
     cd /var/www/html/extensions/Elastica && \
     php /var/www/html/composer.phar update --no-dev
