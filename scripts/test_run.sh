@@ -6,6 +6,7 @@ docker rm some-mediawiki
 
 if [ -f "RUN" ]; then
   docker run --name some-mediawiki -p 9080:80 \
+    -v $DIR/skins/next:/var/www/html/skins/next \
     -v $DIR/data:/var/www/data \
     -v $DIR/LocalSettings.php:/var/www/html/LocalSettings.php \
     -v $DIR/.smw.json:/var/www/html/.smw.json \
