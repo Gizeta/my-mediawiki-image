@@ -5,3 +5,5 @@ RewriteRule ^(.+)$ /index.php?title=$1 [L,QSA]
 
 php_value upload_max_filesize 30M
 php_value post_max_size 30M
+
+php_flag display_errors Off 
